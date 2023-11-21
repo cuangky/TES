@@ -425,9 +425,9 @@ replace_kernel() {
     cd ${make_path}
 
     # Replace the kernel
-    build_boot="$(ls ${kernel_path}/${kernel}/boot-${kernel}-*.tar.gz 2>/dev/null | head -n 1)"
-    build_dtb="$(ls ${kernel_path}/${kernel}/dtb-amlogic-${kernel}-*.tar.gz 2>/dev/null | head -n 1)"
-    build_modules="$(ls ${kernel_path}/${kernel}/modules-${kernel}-*.tar.gz 2>/dev/null | head -n 1)"
+    build_boot="$(ls ${kernel_path}/${kernel}/boot-${kernel}*.tar.gz 2>/dev/null | head -n 1)"
+    build_dtb="$(ls ${kernel_path}/${kernel}/dtb-amlogic-${kernel}*.tar.gz 2>/dev/null | head -n 1)"
+    build_modules="$(ls ${kernel_path}/${kernel}/modules-${kernel}*.tar.gz 2>/dev/null | head -n 1)"
     [[ -n "${build_boot}" && -n "${build_dtb}" && -n "${build_modules}" ]] || error_msg "The 3 kernel missing."
 
     # 01. For /boot five files
