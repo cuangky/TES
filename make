@@ -441,8 +441,8 @@ replace_kernel() {
 
     # 03. For /lib/modules/*
     tar -xzf ${build_modules} -C ${tag_rootfs}/lib/modules
-    (cd ${tag_rootfs}/lib/modules/${kernel}-*/ && rm -f build source *.ko 2>/dev/null && find ./ -type f -name '*.ko' -exec ln -s {} ./ \;)
-    [[ "$(ls ${tag_rootfs}/lib/modules/${kernel}-* -l 2>/dev/null | grep "^d" | wc -l)" -eq "1" ]] || error_msg "Missing kernel."
+    (cd ${tag_rootfs}/lib/modules/${kernel}*/ && rm -f build source *.ko 2>/dev/null && find ./ -type f -name '*.ko' -exec ln -s {} ./ \;)
+    [[ "$(ls ${tag_rootfs}/lib/modules/${kernel}* -l 2>/dev/null | grep "^d" | wc -l)" -eq "1" ]] || error_msg "Missing kernel."
 }
 
 refactor_files() {
